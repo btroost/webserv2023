@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="w3-container fl-center">
+  <div class="w3-content"  width="800px" height="600px">
+    <h2>{{ vars.text1}}</h2>
+    <table class="w3-table-all">
+      <tr>
+        {% for field in dataset.columns %}
+          <td>{{ field[0] }}</td>
+        {% endfor %}
+      </tr>
+
+      {% for row in dataset.results %}
+        <tr>
+          {% for field in row %}
+            <td>{{ field }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+
+{% endblock %}
